@@ -1,0 +1,165 @@
+{
+  "name": "_hyperscript",
+  "rules": {
+    "source_file": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "_statement"
+      }
+    },
+    "_statement": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "set_statement"
+        }
+      ]
+    },
+    "set_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "set"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_identifier"
+        },
+        {
+          "type": "STRING",
+          "value": "to"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "expression"
+        }
+      ]
+    },
+    "expression": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_literal"
+        }
+      ]
+    },
+    "_identifier": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "global_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "element_identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "local_identifier"
+        }
+      ]
+    },
+    "global_identifier": {
+      "type": "PATTERN",
+      "value": "(\\$[a-zA-Z0-9_]+)|(global\\s+[a-zA-Z0-9_]+)"
+    },
+    "element_identifier": {
+      "type": "PATTERN",
+      "value": "(\\:[a-zA-Z0-9_]+)|(element\\s+[a-zA-Z0-9_]+)"
+    },
+    "local_identifier": {
+      "type": "PATTERN",
+      "value": "(local\\s+[a-zA-Z0-9_]+)"
+    },
+    "_literal": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "dom_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "num_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "string_literal"
+        }
+      ]
+    },
+    "num_literal": {
+      "type": "PATTERN",
+      "value": "\\d+"
+    },
+    "string_literal": {
+      "type": "PATTERN",
+      "value": "(\".*\")|(`.*`)|('.*')"
+    },
+    "dom_literal": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "class_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "id_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "query_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "attribute_literal"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "style_literal"
+        }
+      ]
+    },
+    "class_literal": {
+      "type": "PATTERN",
+      "value": "\\.([^\\s]+)"
+    },
+    "id_literal": {
+      "type": "PATTERN",
+      "value": "\\#([^\\s]+)"
+    },
+    "query_literal": {
+      "type": "PATTERN",
+      "value": "<([^>]+)\\/>"
+    },
+    "attribute_literal": {
+      "type": "PATTERN",
+      "value": "@([^\\s]+)"
+    },
+    "style_literal": {
+      "type": "PATTERN",
+      "value": "\\*([^\\s]+)"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}

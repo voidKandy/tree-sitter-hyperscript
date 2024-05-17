@@ -1,0 +1,158 @@
+[
+  {
+    "type": "dom_literal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute_literal",
+          "named": true
+        },
+        {
+          "type": "class_literal",
+          "named": true
+        },
+        {
+          "type": "id_literal",
+          "named": true
+        },
+        {
+          "type": "query_literal",
+          "named": true
+        },
+        {
+          "type": "style_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "dom_literal",
+          "named": true
+        },
+        {
+          "type": "element_identifier",
+          "named": true
+        },
+        {
+          "type": "global_identifier",
+          "named": true
+        },
+        {
+          "type": "local_identifier",
+          "named": true
+        },
+        {
+          "type": "num_literal",
+          "named": true
+        },
+        {
+          "type": "string_literal",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "element_identifier",
+          "named": true
+        },
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "global_identifier",
+          "named": true
+        },
+        {
+          "type": "local_identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "set_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "attribute_literal",
+    "named": true
+  },
+  {
+    "type": "class_literal",
+    "named": true
+  },
+  {
+    "type": "element_identifier",
+    "named": true
+  },
+  {
+    "type": "global_identifier",
+    "named": true
+  },
+  {
+    "type": "id_literal",
+    "named": true
+  },
+  {
+    "type": "local_identifier",
+    "named": true
+  },
+  {
+    "type": "num_literal",
+    "named": true
+  },
+  {
+    "type": "query_literal",
+    "named": true
+  },
+  {
+    "type": "set",
+    "named": false
+  },
+  {
+    "type": "string_literal",
+    "named": true
+  },
+  {
+    "type": "style_literal",
+    "named": true
+  },
+  {
+    "type": "to",
+    "named": false
+  }
+]

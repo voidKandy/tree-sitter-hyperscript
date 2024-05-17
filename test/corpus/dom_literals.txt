@@ -1,0 +1,33 @@
+=================
+Set Statements
+=================
+
+set :testVariable to 5
+set element testVariable to .testClass
+
+set $globalVariable to 10
+set global globalVariable to #testID
+
+
+---
+
+(source_file
+    (set_statement
+        (element_identifier)
+        (expression
+            (num_literal)))
+    (set_statement
+        (element_identifier)
+        (expression
+            (dom_literal
+                (class_literal))))
+    (set_statement
+        (global_identifier)
+        (expression
+            (num_literal)))
+    (set_statement
+        (global_identifier)
+        (expression
+            (dom_literal
+                (id_literal)))))
+
